@@ -1,5 +1,5 @@
-import Producto from './components/Producto';
 import './App.css';
+import ListaProductos from './components/ListaProductos';
 
 function App() {
 
@@ -12,9 +12,7 @@ function App() {
   return (
     <div className="App">
       <h1 className='title'>Lista de Productos</h1>
-      {productos.map((p, index)=> (
-        <Producto key={index} name={p.name} price={p.price} onOffer={p.onOffer}/>
-      ))}
+      <ListaProductos productos={productos}/>
     </div>
   );
 }
