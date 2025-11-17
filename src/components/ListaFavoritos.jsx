@@ -1,4 +1,5 @@
 import Producto from "./Producto";
+import PropTypes from "prop-types";
 
 function ListaFavoritos({ productosFavoritos, toggleFavorito }) {
     return (
@@ -25,5 +26,17 @@ function ListaFavoritos({ productosFavoritos, toggleFavorito }) {
         </div>
     );
 }
+
+ListaFavoritos.propTypes = {
+  productosFavoritos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      onOffer: PropTypes.bool
+    })
+  ).isRequired,
+  toggleFavorito: PropTypes.func.isRequired
+};
 
 export default ListaFavoritos;

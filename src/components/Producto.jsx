@@ -20,9 +20,12 @@ function Producto({id, name, price, onOffer, estaEnFavoritos, toggleFavorito}) {
 }
 
 Producto.propTypes = {
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
-    onOffer: PropTypes.bool
+    onOffer: PropTypes.bool,
+    estaEnFavoritos: PropTypes.bool,
+    toggleFavorito: PropTypes.func.isRequired
 };
 
 export default Producto;

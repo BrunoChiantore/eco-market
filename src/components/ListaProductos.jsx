@@ -17,7 +17,9 @@ function ListaProductos({ productos, favoritos, toggleFavorito }) {
 }
 
 ListaProductos.propTypes = {
-    productos: PropTypes.array.isRequired
+    productos: PropTypes.array.isRequired,
+    favoritos: PropTypes.arrayOf(PropTypes.string).isRequired,
+    toggleFavorito: PropTypes.func.isRequired
 };
 
 export default ListaProductos;
