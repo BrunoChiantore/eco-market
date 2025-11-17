@@ -1,6 +1,13 @@
-function Producto({name, price, onOffer}) {
+import PropTypes from "prop-types";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+
+
+function Producto({id, name, price, onOffer, estaEnFavoritos, toggleFavorito}) {
     return (
         <div className={`product ${onOffer ? "product-offer" : ""}`}>
+            <button className={`fav-btn ${estaEnFavoritos ? "active" : ""}`} onClick={() => toggleFavorito(id)}>
+                {estaEnFavoritos ? <FaHeart /> : <FaRegHeart />}
+            </button>
             {onOffer && <span className="offer-badge">OFERTA!</span>}
             <h2 className="product-title">{name}</h2>
             <p className="price">Precio: {price}</p>
@@ -11,5 +18,11 @@ function Producto({name, price, onOffer}) {
         </div>
     );
 }
+
+Producto.propTypes = {
+    name: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    onOffer: PropTypes.bool
+};
 
 export default Producto;

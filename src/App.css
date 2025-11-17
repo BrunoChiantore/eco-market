@@ -27,6 +27,7 @@ body {
 }
 
 .product {
+  position: relative;
   padding: 12px;
   border: 2px solid gray;
   border-radius: 8px;
@@ -47,4 +48,47 @@ body {
   font-weight: bold;
   font-size: 0.85rem;
   margin-bottom: 8px;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #888; /* gris suave para cuando está vacío */
+}
+
+.fav-btn.active {
+  color: orange;
+}
+
+.favoritos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.favoritos-container {
+  width: 80%;
+  margin-top: 30px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.favoritos-container h2 {
+  margin-top: 0;
+}
+
+.sin-favoritos {
+  color: #555;
+  font-style: italic;
+  padding: 10px 0;
 }
